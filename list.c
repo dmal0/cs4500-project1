@@ -6,12 +6,18 @@
 
 int main()
 {
+    /* Create list and strings;
+     * Strings must be one character longer than
+     * the actual text to include \0 at the end. */
     list *testList = create_list();
-    char str[4] = "test";
-    char str2[6] = "test 2";
-    char str3[6] = "test 3";
+    char str[5] = "test";
+    char str2[7] = "test 2";
+    char str3[7] = "test 3";
+
+    // Add the first string to the linked list
     add_to_list(testList, str);
     
+    // Check if the head is still NULL
     if (testList->head != NULL)
     {
         printf("Head is NOT null\n");
@@ -44,12 +50,11 @@ list* create_list()
 {
     // Create the list
     list *llist = malloc(sizeof(node));
+    
     // Set the head to NULL
     llist->head = NULL;
 
-    // Need to figure out error handling but C doesn't have
-    // built-in exception handling, so more like something to
-    // verify the output or that the list was actually made (?)
+    // Verify that the head is NULL
     if (llist->head == NULL)
     {
         return llist;
@@ -74,6 +79,16 @@ int add_to_list(list* ll, char* item)
         newNode->item = strdup(item); // Copy the string
         newNode->next = NULL; // There is no next list item yet
         return 0;
+
+        // Verify input copied
+        if (newNode->item == item)
+        {
+            return 0;
+        }
+        else
+        {
+            return -1;
+        }
     }
     // If not the first, go to end of list to add
     else
@@ -93,6 +108,16 @@ int add_to_list(list* ll, char* item)
         newNode->item = strdup(item);
         newNode->next = NULL;
         return 0;
+
+        // Verify input copied
+        if (newNode->item == item)
+        {
+            return 0;
+        }
+        else
+        {
+            return -1;
+        }
     }
 }
 
