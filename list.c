@@ -27,6 +27,10 @@ int main()
     char *nextItem = nextFromHead->item;
     printf("%s\n", nextItem);
 
+    // Try printing the list
+    printf("Printing the linked list...\n");
+    print_list(testList);
+
     return 0;
 }
 
@@ -96,4 +100,23 @@ char* remove_from_list(list* ll)
     // Save pointer to string
     // Remove list head
     // Free head node
+}
+
+/* Prints every string in each node of the list ll, with a new line
+ * character at the end of each string */
+void print_list(list *ll)
+{
+    if(ll->head == NULL)
+    {
+        printf("The list is empty.\n");
+    }
+
+    // Head pointer
+    node *ptr = ll->head;
+
+    while(ptr != NULL)
+    {
+        printf("%s\n", ptr->item);
+        ptr = ptr->next;
+    }
 }
