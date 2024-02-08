@@ -12,16 +12,13 @@ int main()
     
     if (testList->head != NULL)
     {
-        printf("Head is NOT null");
+        printf("Head is NOT null\n");
     }
     
-    /* 
-    add_to_list(testList, str);
     node *listHead = testList->head;
     char *headItem = listHead->item;
         
     printf("%s",headItem);
-    */
 
     return 0;
 }
