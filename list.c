@@ -8,6 +8,7 @@ int main()
 {
     list *testList = create_list();
     char str[4] = "test";
+    char str2[6] = "test 2";
     add_to_list(testList, str);
     
     if (testList->head != NULL)
@@ -15,10 +16,16 @@ int main()
         printf("Head is NOT null\n");
     }
     
+    // Peek at head item
     node *listHead = testList->head;
     char *headItem = listHead->item;
-        
-    printf("%s",headItem);
+    printf("%s\n", headItem);
+
+    // Add another node and peek
+    add_to_list(testList, str2);
+    node *nextFromHead = listHead->next;
+    char *nextItem = nextFromHead->item;
+    printf("%s\n", nextItem);
 
     return 0;
 }
