@@ -8,19 +8,20 @@ int main()
 {
     list *testList = create_list();
     char str[4] = "test";
+    add_to_list(testList, str);
     
-    if (testList != NULL)
+    if (testList->head == NULL)
     {
-        printf("ok");
-        
-        /*
-        add_to_list(testList, str);
-        node *listHead = testList->head;
-        char *headItem = listHead->item;
-        
-        printf("%s",headItem);
-        */
+        printf("Head is null");
     }
+    
+    /* These make "Head is null" not print when not commented out
+    add_to_list(testList, str);
+    node *listHead = testList->head;
+    char *headItem = listHead->item;
+        
+    printf("%s",headItem);
+    */
 
     return 0;
 }
