@@ -8,9 +8,10 @@ struct Node {
     node *next;
 };
 
+// Needed to add "list" to allow the function declarations to work
 typedef struct List {
     node *head;
-};
+} list;
 
 /* Allocate space for a new list and set its head to NULL.
  * Returns the created list if successful, NULL otherwise. */
