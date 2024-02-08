@@ -9,6 +9,7 @@ int main()
     list *testList = create_list();
     char str[4] = "test";
     char str2[6] = "test 2";
+    char str3[6] = "test 3";
     add_to_list(testList, str);
     
     if (testList->head != NULL)
@@ -26,6 +27,9 @@ int main()
     node *nextFromHead = listHead->next;
     char *nextItem = nextFromHead->item;
     printf("%s\n", nextItem);
+
+    // Add a third node
+    add_to_list(testList, str3);
 
     // Try printing the list
     printf("Printing the linked list...\n");
