@@ -10,12 +10,12 @@ int main()
     char str[4] = "test";
     add_to_list(testList, str);
     
-    if (testList->head == NULL)
+    if (testList->head != NULL)
     {
-        printf("Head is null");
+        printf("Head is NOT null");
     }
     
-    /* These make "Head is null" not print when not commented out
+    /* 
     add_to_list(testList, str);
     node *listHead = testList->head;
     char *headItem = listHead->item;
@@ -54,9 +54,8 @@ list* create_list()
 int add_to_list(list* ll, char* item)
 {
     // Add the first node to the list
-    if (ll == NULL)
-    {
-        list *ll = malloc(sizeof(node)); // Allocate list space
+    if (ll->head == NULL)
+    {       
         node *newNode = malloc(sizeof(node)); // Allocate node space
         ll->head = newNode; // Set head
         
