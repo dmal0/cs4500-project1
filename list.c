@@ -2,7 +2,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
-#include <list.h>
+#include "list.h"
 
 int main()
 {
