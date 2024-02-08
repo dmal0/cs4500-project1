@@ -77,6 +77,7 @@ int add_to_list(list* ll, char* item)
 
         // New node
         node *newNode = malloc(sizeof(node));
+        hd->next = newNode;
         newNode->item = strdup(item);
         newNode->next = NULL;
         return 0;
