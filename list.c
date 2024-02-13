@@ -41,6 +41,13 @@ int main()
     printf("Printing the linked list...\n");
     print_list(testList);
 
+    // Remove head
+    remove_from_list(testList);
+
+    // Try printing the list - Segmentation fault
+    printf("Printing the linked list...\n");
+    print_list(testList);
+
     return 0;
 }
 
@@ -125,10 +132,28 @@ int add_to_list(list* ll, char* item)
  * and returns a pointer to this string. Also frees the removed head node. */
 char* remove_from_list(list* ll)
 {
-    // Extract list from string in head
-    // Save pointer to string
-    // Remove list head
-    // Free head node
+    if (ll->head == NULL)
+        return NULL;
+    
+    else
+    {
+        // Save the old head node
+        node *oldHead = ll->head;
+
+        // Set the original head to the new head,
+        // unlinking the old head
+        ll->head = oldHead->next;
+
+        // Save the string from the old head
+        char* oldHeadItem = (char*)malloc(sizeof(oldHead->item));
+        strcpy(oldHeadItem,oldHead->item);
+
+        // Free the old head
+        free(oldHead);
+
+        // Return the old head's string
+        return 0;
+    }
 }
 
 /* Prints every string in each node of the list ll, with a new line
