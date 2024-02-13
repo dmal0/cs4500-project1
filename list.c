@@ -49,6 +49,9 @@ int main()
     printf("Printing the linked list...\n");
     print_list(testList);
 
+    free_list(testList);
+    print_list(testList);
+
     return 0;
 }
 
@@ -174,4 +177,30 @@ void print_list(list *ll)
         printf("%s\n", ptr->item);
         ptr = ptr->next;
     }
+}
+
+/* Flushes (clears) the entire list and re-initializes the list. The passed 
+ * pointer ll should still point to a valid, empty list when this function
+ * returns. Any memory allocated to store nodes in the list should be freed. */
+void flush_list(list* ll)
+{
+    free_list(ll);
+    ll = create_list();
+    
+}
+
+/* De-allocates all data for the list. Ensure all memory allocated for list
+ * ll is freed, including any allocated strings and list ll itself. */
+void free_list(list *ll)
+{
+    node* tmp;
+    
+    while (ll->head != NULL)
+    {
+        tmp = ll->head;
+        ll->head = ll->head->next;
+        free(tmp);
+    }
+    
+    free(ll);
 }
