@@ -164,18 +164,25 @@ char* remove_from_list(list* ll)
  * character at the end of each string */
 void print_list(list *ll)
 {
-    if(ll->head == NULL)
+    if(ll == NULL)
     {
-        printf("The list is empty.\n");
+        printf("The list is NULL.\n");
     }
-
-    // Head pointer
-    node *ptr = ll->head;
-
-    while(ptr != NULL)
+    else
     {
-        printf("%s\n", ptr->item);
-        ptr = ptr->next;
+        if(ll->head == NULL)
+        {
+            printf("The list is empty.\n");
+        }
+    
+        // Head pointer
+        node *ptr = ll->head;
+    
+        while(ptr != NULL)
+        {
+            printf("%s\n", ptr->item);
+            ptr = ptr->next;
+        }
     }
 }
 
