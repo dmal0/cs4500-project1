@@ -42,7 +42,8 @@ int main()
     print_list(testList);
 
     // Remove head
-    remove_from_list(testList);
+    char *oldHead = remove_from_list(testList);
+    printf("Old head item: %s\n",oldHead);
 
     // Try printing the list - Segmentation fault
     printf("Printing the linked list...\n");
@@ -152,7 +153,7 @@ char* remove_from_list(list* ll)
         free(oldHead);
 
         // Return the old head's string
-        return 0;
+        return oldHeadItem;
     }
 }
 
