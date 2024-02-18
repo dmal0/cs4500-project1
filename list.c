@@ -156,7 +156,9 @@ void free_list(list *ll)
         tmp = ll->head;
         ll->head = ll->head->next;
         free(tmp);
+        tmp=NULL;
     }
     
     free(ll);
+    ll=NULL;
 }
