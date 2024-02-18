@@ -9,7 +9,7 @@
 list* create_list()
 {
     // Create the list
-    list *llist = malloc(sizeof(node));
+    list *llist = malloc(sizeof(list));
     
     // Set the head to NULL
     llist->head = NULL;
