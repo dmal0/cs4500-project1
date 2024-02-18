@@ -159,8 +159,4 @@ void free_list(list *ll)
     }
     
     free(ll);
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> d27d10acb00920a43c10d49631db6eb1ca15f504
