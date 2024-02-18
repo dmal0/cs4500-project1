@@ -4,60 +4,12 @@
 #include <string.h>
 #include "list.h"
 
-int main()
-{
-    /* Create list and strings;
-     * Strings must be one character longer than
-     * the actual text to include \0 at the end. */
-    list *testList = create_list();
-    char str[5] = "test";
-    char str2[7] = "test 2";
-    char str3[7] = "test 3";
-
-    // Add the first string to the linked list
-    add_to_list(testList, str);
-    
-    // Check if the head is still NULL
-    if (testList->head != NULL)
-    {
-        printf("Head is NOT null\n");
-    }
-    
-    // Peek at head item
-    node *listHead = testList->head;
-    char *headItem = listHead->item;
-    printf("%s\n", headItem);
-
-    // Add another node and peek
-    add_to_list(testList, str2);
-    node *nextFromHead = listHead->next;
-    char *nextItem = nextFromHead->item;
-    printf("%s\n", nextItem);
-
-    // Add a third node
-    add_to_list(testList, str3);
-
-    // Try printing the list
-    printf("Printing the linked list...\n");
-    print_list(testList);
-
-    // Remove head
-    char *oldHead = remove_from_list(testList);
-    printf("Old head item: %s\n",oldHead);
-
-    // Try printing the list - Segmentation fault
-    printf("Printing the linked list...\n");
-    print_list(testList);
-
-    return 0;
-}
-
 /* Allocate space for a new list and set its head to NULL.
  * Returns the created list if successful, NULL otherwise. */
 list* create_list()
 {
     // Create the list
-    list *llist = malloc(sizeof(node));
+    list *llist = malloc(sizeof(list));
     
     // Set the head to NULL
     llist->head = NULL;
@@ -161,17 +113,50 @@ char* remove_from_list(list* ll)
  * character at the end of each string */
 void print_list(list *ll)
 {
-    if(ll->head == NULL)
+    if(ll == NULL)
     {
-        printf("The list is empty.\n");
+        printf("The list is NULL.\n");
     }
-
-    // Head pointer
-    node *ptr = ll->head;
-
-    while(ptr != NULL)
+    else
     {
-        printf("%s\n", ptr->item);
-        ptr = ptr->next;
+        if(ll->head == NULL)
+        {
+            printf("The list is empty.\n");
+        }
+    
+        // Head pointer
+        node *ptr = ll->head;
+    
+        while(ptr != NULL)
+        {
+            printf("%s\n", ptr->item);
+            ptr = ptr->next;
+        }
     }
+}
+
+/* Flushes (clears) the entire list and re-initializes the list. The passed 
+ * pointer ll should still point to a valid, empty list when this function
+ * returns. Any memory allocated to store nodes in the list should be freed. */
+void flush_list(list* ll)
+{
+    free_list(ll);
+    ll = create_list();
+    
+}
+
+/* De-allocates all data for the list. Ensure all memory allocated for list
+ * ll is freed, including any allocated strings and list ll itself. */
+void free_list(list *ll)
+{
+    node* tmp;
+    
+    while (ll->head != NULL)
+    {
+        tmp = ll->head;
+        ll->head = ll->head->next;
+        free(tmp);
+    }
+    
+    free(ll);
 }
