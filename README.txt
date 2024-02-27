@@ -1,18 +1,57 @@
-1) Team: Loe Malabanan, Deven Rood
-   We have neither given nor received unauthorized assistance on this work.
+NAME OF PROJECT:
+================
+Project 1 Linked List
 
-2) Our VM is called "lmvm" under Loe's folder in vSphere. 
-   The password for the account is 48694062.
+MEMBERS:
+========
+Loe Malabanan, Deven Rood
 
-3) 
+STATEMENT:
+==========
+We have neither given nor received unauthorized assistance on this work.
 
-4) Issues:
-   We had an issue with Free_List() where we would get a segmentation fault after 
-   trying to print a list that had been freed. This makes sense because the list
-   pointer now points to an invalid location. We attempted to set the list pointer
-   to NULL within the Free_List() function, but since we are only operating on a 
-   copy of that pointer, the segmentation fault persisted. Eventually, we realized
-   that the easiest solution was to set the list to NULL within main() where we 
-   have access to the actual pointer.
+VIRTUAL MACHINE (VM) INFORMATION:
+=================================
+NAME OF VIRTUAL MACHINE (VM): lmvm
+USERNAME: The virtual machine does not ask for a username when we log in.
+PASSWORD: 48694062
 
-5) Conversations:
+The project files can be found on the desktop, in the folder "Project 1," 
+in the subfolder "Project 1 (with Makefile)."
+
+Files:
+    list.h      - Function prototypes from the instructions
+    list.c      - Implementation for the functions in list.h
+    list_test.c - Code for testing functionality
+    list        - Executable file
+    makefile    - The makefile for the program
+    README.txt  - This file
+
+All other files were created when the command "make list" was run.
+
+ROOT PASSWORD:
+==============
+48694062
+
+PROBLEM DESCRIPTION AND REMEDIATION:
+====================================
+
+    PART 0: SET UP
+    ==============
+    No significant problems were encountered during this part.
+
+    PART 1: LINKED LIST
+    ===================
+        We had an issue with free_list() where we would get a segmentation fault 
+    after trying to print a list that had been freed. This makes sense because the 
+    list pointer now points to an invalid location. We attempted to set the list 
+    pointer to NULL within the Free_List() function, but since we are only operating 
+    on a copy of that pointer, the segmentation fault persisted. Eventually, we 
+    realized that the easiest solution was to set the list to NULL within main() where 
+    we have access to the actual pointer.
+
+    [Conversation information]
+
+    PART 2: WRITING A MAKE FILE
+    ===========================
+    No significant problems were encountered during this part.
