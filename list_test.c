@@ -50,7 +50,8 @@ int main()
     print_list(testList);
 
     free_list(testList);
+    testList = NULL;
     print_list(testList);
-
+    
     return 0;
 }
