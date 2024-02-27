@@ -50,11 +50,11 @@ PROBLEM DESCRIPTION AND REMEDIATION:
     realized that the easiest solution was to set the list to NULL within main() where 
     we have access to the actual pointer.
 
-    I reached out to Riley Daughton on Discord asking for advice on how to deal with
-    the segmentation fault. He informed me that he had run into the same issue and
-    that setting the list to NULL in main() solved the problem. We discussed why
-    setting the list to NULL within Free_List() wouldn't work and the ways that
-    Free_List() and Flush_List() were distinct from each other.
+        Deven reached out to Riley Daughton on Discord asking for advice on how to 
+    deal with the segmentation fault. He informed Deven that he had run into the same 
+    issue and that setting the list to NULL in main() solved the problem. They discussed 
+    why setting the list to NULL within free_list() wouldn't work and the ways that
+    free_list() and flush_list() were distinct from each other.
 
     PART 2: WRITING A MAKE FILE
     ===========================
