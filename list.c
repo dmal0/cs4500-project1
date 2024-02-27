@@ -38,7 +38,6 @@ int add_to_list(list* ll, char* item)
         
         newNode->item = strdup(item); // Copy the string
         newNode->next = NULL; // There is no next list item yet
-        return 0;
 
         // Verify input copied
         if (newNode->item == item)
@@ -67,7 +66,6 @@ int add_to_list(list* ll, char* item)
         hd->next = newNode;
         newNode->item = strdup(item);
         newNode->next = NULL;
-        return 0;
 
         // Verify input copied
         if (newNode->item == item)
@@ -127,6 +125,7 @@ void print_list(list *ll)
         // Head pointer
         node *ptr = ll->head;
     
+        // Print and traverse
         while(ptr != NULL)
         {
             printf("%s\n", ptr->item);
@@ -151,6 +150,7 @@ void free_list(list *ll)
 {
     node* tmp;
     
+    // Traverse, free, and set to NULL
     while (ll->head != NULL)
     {
         tmp = ll->head;

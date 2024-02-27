@@ -41,7 +41,7 @@ int main()
     printf("Printing the linked list...\n");
     print_list(testList);
 
-    // Remove head
+    // Remove head and print the removed old head
     char *oldHead = remove_from_list(testList);
     printf("Old head item: %s\n",oldHead);
 
@@ -49,9 +49,14 @@ int main()
     printf("Printing the linked list...\n");
     print_list(testList);
 
+    // Flush the list and try printing
+    flush_list(testList);
+    print_list(testList);
+
+    // Free the list and try printing again
     free_list(testList);
     testList = NULL;
     print_list(testList);
-    
+
     return 0;
 }
