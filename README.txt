@@ -16,18 +16,18 @@ NAME OF VIRTUAL MACHINE (VM): lmvm
 USERNAME: The virtual machine does not ask for a username when we log in.
 PASSWORD: 48694062
 
-The project files can be found on the desktop, in the folder "Project 1," 
-in the subfolder "Project 1 (with Makefile)."
+The project files can be found on the desktop, in the folder "Project 1", 
+in the subfolder "Project 1 (with Makefile)".
 
 Files:
     list.h      - Function prototypes from the instructions
     list.c      - Implementation for the functions in list.h
     list_test.c - Code for testing functionality
-    list        - Executable file
     makefile    - The makefile for the program
     README.txt  - This file
 
-All other files were created when the command "make list" was run.
+The project can be compiled by running the command "make list"
+then run with "./list".
 
 ROOT PASSWORD:
 ==============
