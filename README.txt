@@ -45,7 +45,7 @@ PROBLEM DESCRIPTION AND REMEDIATION:
         We had an issue with free_list() where we would get a segmentation fault 
     after trying to print a list that had been freed. This makes sense because the 
     list pointer now points to an invalid location. We attempted to set the list 
-    pointer to NULL within the Free_List() function, but since we are only operating 
+    pointer to NULL within the free_list() function, but since we are only operating 
     on a copy of that pointer, the segmentation fault persisted. Eventually, we 
     realized that the easiest solution was to set the list to NULL within main() where 
     we have access to the actual pointer.
